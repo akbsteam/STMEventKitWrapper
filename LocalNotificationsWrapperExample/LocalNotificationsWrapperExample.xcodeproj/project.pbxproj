@@ -18,6 +18,9 @@
 		1574C57A166CBCDD0056268D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1574C579166CBCDD0056268D /* Default-568h@2x.png */; };
 		1574C57D166CBCDD0056268D /* STMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C57C166CBCDD0056268D /* STMViewController.m */; };
 		1574C580166CBCDD0056268D /* STMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1574C57E166CBCDD0056268D /* STMViewController.xib */; };
+		1574C588166CBD0E0056268D /* STMLocalNotificationsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */; };
+		1574C58C166CCB380056268D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1574C58B166CCB380056268D /* EventKit.framework */; };
+		1574C594166CDAC50056268D /* STMNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C593166CDAC50056268D /* STMNotification.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,11 @@
 		1574C57B166CBCDD0056268D /* STMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMViewController.h; sourceTree = "<group>"; };
 		1574C57C166CBCDD0056268D /* STMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMViewController.m; sourceTree = "<group>"; };
 		1574C57F166CBCDD0056268D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/STMViewController.xib; sourceTree = "<group>"; };
+		1574C586166CBD0E0056268D /* STMLocalNotificationsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMLocalNotificationsWrapper.h; sourceTree = "<group>"; };
+		1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMLocalNotificationsWrapper.m; sourceTree = "<group>"; };
+		1574C58B166CCB380056268D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		1574C592166CDAC50056268D /* STMNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMNotification.h; sourceTree = "<group>"; };
+		1574C593166CDAC50056268D /* STMNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMNotification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1574C58C166CCB380056268D /* EventKit.framework in Frameworks */,
 				1574C564166CBCDC0056268D /* UIKit.framework in Frameworks */,
 				1574C566166CBCDC0056268D /* Foundation.framework in Frameworks */,
 				1574C568166CBCDC0056268D /* CoreGraphics.framework in Frameworks */,
@@ -56,6 +65,7 @@
 		1574C554166CBCDC0056268D = {
 			isa = PBXGroup;
 			children = (
+				1574C58B166CCB380056268D /* EventKit.framework */,
 				1574C569166CBCDC0056268D /* LocalNotificationsWrapperExample */,
 				1574C562166CBCDC0056268D /* Frameworks */,
 				1574C560166CBCDC0056268D /* Products */,
@@ -89,6 +99,10 @@
 				1574C57C166CBCDD0056268D /* STMViewController.m */,
 				1574C57E166CBCDD0056268D /* STMViewController.xib */,
 				1574C56A166CBCDD0056268D /* Supporting Files */,
+				1574C586166CBD0E0056268D /* STMLocalNotificationsWrapper.h */,
+				1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */,
+				1574C592166CDAC50056268D /* STMNotification.h */,
+				1574C593166CDAC50056268D /* STMNotification.m */,
 			);
 			path = LocalNotificationsWrapperExample;
 			sourceTree = "<group>";
@@ -177,6 +191,8 @@
 				1574C570166CBCDD0056268D /* main.m in Sources */,
 				1574C574166CBCDD0056268D /* STMAppDelegate.m in Sources */,
 				1574C57D166CBCDD0056268D /* STMViewController.m in Sources */,
+				1574C588166CBD0E0056268D /* STMLocalNotificationsWrapper.m in Sources */,
+				1574C594166CDAC50056268D /* STMNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
