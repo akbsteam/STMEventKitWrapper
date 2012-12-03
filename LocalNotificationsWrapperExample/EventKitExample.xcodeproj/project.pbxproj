@@ -18,20 +18,20 @@
 		1574C57A166CBCDD0056268D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1574C579166CBCDD0056268D /* Default-568h@2x.png */; };
 		1574C57D166CBCDD0056268D /* STMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C57C166CBCDD0056268D /* STMViewController.m */; };
 		1574C580166CBCDD0056268D /* STMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1574C57E166CBCDD0056268D /* STMViewController.xib */; };
-		1574C588166CBD0E0056268D /* STMLocalNotificationsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */; };
+		1574C588166CBD0E0056268D /* STMEventKitWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C587166CBD0E0056268D /* STMEventKitWrapper.m */; };
 		1574C58C166CCB380056268D /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1574C58B166CCB380056268D /* EventKit.framework */; };
-		1574C594166CDAC50056268D /* STMNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C593166CDAC50056268D /* STMNotification.m */; };
+		1574C594166CDAC50056268D /* STMEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1574C593166CDAC50056268D /* STMEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1574C55F166CBCDC0056268D /* LocalNotificationsWrapperExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalNotificationsWrapperExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1574C55F166CBCDC0056268D /* EventKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1574C563166CBCDC0056268D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1574C565166CBCDC0056268D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1574C567166CBCDC0056268D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1574C56B166CBCDD0056268D /* LocalNotificationsWrapperExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LocalNotificationsWrapperExample-Info.plist"; sourceTree = "<group>"; };
+		1574C56B166CBCDD0056268D /* EventKitExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EventKitExample-Info.plist"; sourceTree = "<group>"; };
 		1574C56D166CBCDD0056268D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1574C56F166CBCDD0056268D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1574C571166CBCDD0056268D /* LocalNotificationsWrapperExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LocalNotificationsWrapperExample-Prefix.pch"; sourceTree = "<group>"; };
+		1574C571166CBCDD0056268D /* EventKitExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EventKitExample-Prefix.pch"; sourceTree = "<group>"; };
 		1574C572166CBCDD0056268D /* STMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMAppDelegate.h; sourceTree = "<group>"; };
 		1574C573166CBCDD0056268D /* STMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMAppDelegate.m; sourceTree = "<group>"; };
 		1574C575166CBCDD0056268D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -40,11 +40,11 @@
 		1574C57B166CBCDD0056268D /* STMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STMViewController.h; sourceTree = "<group>"; };
 		1574C57C166CBCDD0056268D /* STMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STMViewController.m; sourceTree = "<group>"; };
 		1574C57F166CBCDD0056268D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/STMViewController.xib; sourceTree = "<group>"; };
-		1574C586166CBD0E0056268D /* STMLocalNotificationsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMLocalNotificationsWrapper.h; sourceTree = "<group>"; };
-		1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMLocalNotificationsWrapper.m; sourceTree = "<group>"; };
+		1574C586166CBD0E0056268D /* STMEventKitWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMEventKitWrapper.h; sourceTree = "<group>"; };
+		1574C587166CBD0E0056268D /* STMEventKitWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMEventKitWrapper.m; sourceTree = "<group>"; };
 		1574C58B166CCB380056268D /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
-		1574C592166CDAC50056268D /* STMNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMNotification.h; sourceTree = "<group>"; };
-		1574C593166CDAC50056268D /* STMNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMNotification.m; sourceTree = "<group>"; };
+		1574C592166CDAC50056268D /* STMEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STMEvent.h; sourceTree = "<group>"; };
+		1574C593166CDAC50056268D /* STMEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STMEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +65,7 @@
 		1574C554166CBCDC0056268D = {
 			isa = PBXGroup;
 			children = (
-				1574C58B166CCB380056268D /* EventKit.framework */,
-				1574C569166CBCDC0056268D /* LocalNotificationsWrapperExample */,
+				1574C569166CBCDC0056268D /* EventKitExample */,
 				1574C562166CBCDC0056268D /* Frameworks */,
 				1574C560166CBCDC0056268D /* Products */,
 			);
@@ -75,7 +74,7 @@
 		1574C560166CBCDC0056268D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1574C55F166CBCDC0056268D /* LocalNotificationsWrapperExample.app */,
+				1574C55F166CBCDC0056268D /* EventKitExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +82,7 @@
 		1574C562166CBCDC0056268D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1574C58B166CCB380056268D /* EventKit.framework */,
 				1574C563166CBCDC0056268D /* UIKit.framework */,
 				1574C565166CBCDC0056268D /* Foundation.framework */,
 				1574C567166CBCDC0056268D /* CoreGraphics.framework */,
@@ -90,7 +90,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1574C569166CBCDC0056268D /* LocalNotificationsWrapperExample */ = {
+		1574C569166CBCDC0056268D /* EventKitExample */ = {
 			isa = PBXGroup;
 			children = (
 				1574C572166CBCDD0056268D /* STMAppDelegate.h */,
@@ -99,21 +99,22 @@
 				1574C57C166CBCDD0056268D /* STMViewController.m */,
 				1574C57E166CBCDD0056268D /* STMViewController.xib */,
 				1574C56A166CBCDD0056268D /* Supporting Files */,
-				1574C586166CBD0E0056268D /* STMLocalNotificationsWrapper.h */,
-				1574C587166CBD0E0056268D /* STMLocalNotificationsWrapper.m */,
-				1574C592166CDAC50056268D /* STMNotification.h */,
-				1574C593166CDAC50056268D /* STMNotification.m */,
+				1574C586166CBD0E0056268D /* STMEventKitWrapper.h */,
+				1574C587166CBD0E0056268D /* STMEventKitWrapper.m */,
+				1574C592166CDAC50056268D /* STMEvent.h */,
+				1574C593166CDAC50056268D /* STMEvent.m */,
 			);
+			name = EventKitExample;
 			path = LocalNotificationsWrapperExample;
 			sourceTree = "<group>";
 		};
 		1574C56A166CBCDD0056268D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1574C56B166CBCDD0056268D /* LocalNotificationsWrapperExample-Info.plist */,
+				1574C56B166CBCDD0056268D /* EventKitExample-Info.plist */,
 				1574C56C166CBCDD0056268D /* InfoPlist.strings */,
 				1574C56F166CBCDD0056268D /* main.m */,
-				1574C571166CBCDD0056268D /* LocalNotificationsWrapperExample-Prefix.pch */,
+				1574C571166CBCDD0056268D /* EventKitExample-Prefix.pch */,
 				1574C575166CBCDD0056268D /* Default.png */,
 				1574C577166CBCDD0056268D /* Default@2x.png */,
 				1574C579166CBCDD0056268D /* Default-568h@2x.png */,
@@ -124,9 +125,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1574C55E166CBCDC0056268D /* LocalNotificationsWrapperExample */ = {
+		1574C55E166CBCDC0056268D /* EventKitExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1574C583166CBCDD0056268D /* Build configuration list for PBXNativeTarget "LocalNotificationsWrapperExample" */;
+			buildConfigurationList = 1574C583166CBCDD0056268D /* Build configuration list for PBXNativeTarget "EventKitExample" */;
 			buildPhases = (
 				1574C55B166CBCDC0056268D /* Sources */,
 				1574C55C166CBCDC0056268D /* Frameworks */,
@@ -136,9 +137,9 @@
 			);
 			dependencies = (
 			);
-			name = LocalNotificationsWrapperExample;
+			name = EventKitExample;
 			productName = LocalNotificationsWrapperExample;
-			productReference = 1574C55F166CBCDC0056268D /* LocalNotificationsWrapperExample.app */;
+			productReference = 1574C55F166CBCDC0056268D /* EventKitExample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -151,7 +152,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = steamshift;
 			};
-			buildConfigurationList = 1574C559166CBCDC0056268D /* Build configuration list for PBXProject "LocalNotificationsWrapperExample" */;
+			buildConfigurationList = 1574C559166CBCDC0056268D /* Build configuration list for PBXProject "EventKitExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -163,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1574C55E166CBCDC0056268D /* LocalNotificationsWrapperExample */,
+				1574C55E166CBCDC0056268D /* EventKitExample */,
 			);
 		};
 /* End PBXProject section */
@@ -191,8 +192,8 @@
 				1574C570166CBCDD0056268D /* main.m in Sources */,
 				1574C574166CBCDD0056268D /* STMAppDelegate.m in Sources */,
 				1574C57D166CBCDD0056268D /* STMViewController.m in Sources */,
-				1574C588166CBD0E0056268D /* STMLocalNotificationsWrapper.m in Sources */,
-				1574C594166CDAC50056268D /* STMNotification.m in Sources */,
+				1574C588166CBD0E0056268D /* STMEventKitWrapper.m in Sources */,
+				1574C594166CDAC50056268D /* STMEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,9 +273,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocalNotificationsWrapperExample/LocalNotificationsWrapperExample-Prefix.pch";
-				INFOPLIST_FILE = "LocalNotificationsWrapperExample/LocalNotificationsWrapperExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LocalNotificationsWrapperExample/EventKitExample-Prefix.pch";
+				INFOPLIST_FILE = "LocalNotificationsWrapperExample/EventKitExample-Info.plist";
+				PRODUCT_NAME = EventKitExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -283,9 +284,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LocalNotificationsWrapperExample/LocalNotificationsWrapperExample-Prefix.pch";
-				INFOPLIST_FILE = "LocalNotificationsWrapperExample/LocalNotificationsWrapperExample-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "LocalNotificationsWrapperExample/EventKitExample-Prefix.pch";
+				INFOPLIST_FILE = "LocalNotificationsWrapperExample/EventKitExample-Info.plist";
+				PRODUCT_NAME = EventKitExample;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -293,7 +294,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1574C559166CBCDC0056268D /* Build configuration list for PBXProject "LocalNotificationsWrapperExample" */ = {
+		1574C559166CBCDC0056268D /* Build configuration list for PBXProject "EventKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1574C581166CBCDD0056268D /* Debug */,
@@ -302,7 +303,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1574C583166CBCDD0056268D /* Build configuration list for PBXNativeTarget "LocalNotificationsWrapperExample" */ = {
+		1574C583166CBCDD0056268D /* Build configuration list for PBXNativeTarget "EventKitExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1574C584166CBCDD0056268D /* Debug */,

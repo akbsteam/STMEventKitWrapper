@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "STMLocalNotificationsWrapper.h"
+#import "STMEventKitWrapper.h"
 
-@interface STMNotification : NSObject <STMLocalNotificationProtocol>
+@interface STMEvent : NSObject <STMEventKitWrapperProtocol>
 
 @property (nonatomic, strong) NSString *identifier;
 @property (nonatomic, strong) NSString *alertBody;
@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSNumber *repeat;
 @property (nonatomic, strong) NSNumber *period;
+@property (nonatomic, strong) NSURL *url;
 
 @end

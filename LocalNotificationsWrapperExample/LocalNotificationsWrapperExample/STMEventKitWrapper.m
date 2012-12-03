@@ -6,25 +6,19 @@
 //  Copyright (c) 2012 steamshift. All rights reserved.
 //
 
-#import "STMLocalNotificationsWrapper.h"
+#import "STMEventKitWrapper.h"
 
-@interface STMLocalNotificationsWrapper()
+@implementation STMEventKitWrapper
 
-@property (nonatomic, strong) NSDictionary *identifiers;
-
-@end
-
-@implementation STMLocalNotificationsWrapper
-
-+ (STMLocalNotificationsWrapper *)sharedInstance {
-    static dispatch_once_t pred;
-    static STMLocalNotificationsWrapper *sharedInstance = nil;
+- (id)initWithName:(NSString *)name identifier:(NSString *)identifier
+{
+    if (!(self = [super init]))
+        return nil;
     
-    dispatch_once(&pred, ^{
-        sharedInstance = [[STMLocalNotificationsWrapper alloc] init];
-    });
+    _calendarName = name;
+    _calendarIdentifier = identifier;
     
-    return sharedInstance;
+    return self;
 }
 
 - (EKCalendar *)eventStore:(EKEventStore *)eventStore calendarForEvents:(NSString *)calendarIdentifier
@@ -33,8 +27,7 @@
     if (calendar)
         return calendar;
 
-    NSString* calendarName = @"My Cal";
-    
+    NSString* calendarName = _calendarName;
     
     // Get the calendar source
     EKSource *localSource;
@@ -102,53 +95,54 @@
     return freq;
 }
 
-- (void)eventKit:(id <STMLocalNotificationProtocol>)notification
+- (void)eventKitCreate:(id <STMEventKitWrapperProtocol>)event
+               success:(void (^)(void))success
+               failure:(void (^)(NSError *error))failure
 {
     EKEventStore *eventDB = [[EKEventStore alloc] init];
 
     if ([eventDB respondsToSelector:@selector(requestAccessToEntityType:completion:)])
     {
         [eventDB requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
-            [self createEvent:notification withStore:eventDB];
+            [self createEvent:event withStore:eventDB success:success failure:failure];
         }];
     } else {
-        [self createEvent:notification withStore:eventDB];
+        [self createEvent:event withStore:eventDB success:success failure:failure];
     }
 }
 
-- (void)createEvent:(id <STMLocalNotificationProtocol>)notification withStore:(EKEventStore *)eventDB
+- (void)createEvent:(id <STMEventKitWrapperProtocol>)event
+          withStore:(EKEventStore *)eventDB
+            success:(void (^)(void))success
+            failure:(void (^)(NSError *error))failure
 {
-    EKEvent *myEvent  = [EKEvent eventWithEventStore:eventDB];
+    EKEvent *calendarEvent  = [EKEvent eventWithEventStore:eventDB];
     
-	myEvent.title     = notification.message;
-    myEvent.startDate = notification.startDate;
-    myEvent.endDate   = notification.startDate;
-	myEvent.allDay = NO;
-    myEvent.URL = [NSURL URLWithString:@"http://google.com"];
-    myEvent.notes = notification.alertBody;
+	calendarEvent.title     = event.message;
+    calendarEvent.startDate = event.startDate;
+    calendarEvent.endDate   = event.startDate;
+	calendarEvent.allDay = NO;
+    calendarEvent.URL = event.url;
+    calendarEvent.notes = event.alertBody;
     
-    EKRecurrenceFrequency freq = [self frequencyFromCalendarUnit:[notification.period intValue]];
+    EKRecurrenceFrequency freq = [self frequencyFromCalendarUnit:[event.period intValue]];
     
-    EKRecurrenceRule *recurrenceRule = [[EKRecurrenceRule alloc] initRecurrenceWithFrequency:freq interval:[notification.repeat intValue] end:[EKRecurrenceEnd recurrenceEndWithEndDate:notification.endDate]];
+    EKRecurrenceRule *recurrenceRule = [[EKRecurrenceRule alloc] initRecurrenceWithFrequency:freq interval:[event.repeat intValue] end:[EKRecurrenceEnd recurrenceEndWithEndDate:event.endDate]];
     
-    [myEvent addRecurrenceRule:recurrenceRule];
+    [calendarEvent addRecurrenceRule:recurrenceRule];
     
-    [myEvent addAlarm:[EKAlarm alarmWithRelativeOffset:0]];
-    [myEvent setCalendar:[self eventStore:eventDB calendarForEvents:@"myEvents"]];
+    [calendarEvent addAlarm:[EKAlarm alarmWithRelativeOffset:0]];
+    [calendarEvent setCalendar:[self eventStore:eventDB calendarForEvents:_calendarIdentifier]];
     
     NSError *err;
     
-    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err];
+    [eventDB saveEvent:calendarEvent span:EKSpanThisEvent error:&err];
     
-	if (!err) {
-		UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Event Created"
-                              message:@"Yay!?"
-                              delegate:nil
-                              cancelButtonTitle:@"Okay"
-                              otherButtonTitles:nil];
-		[alert show];
-	}
+    if (err != nil) {
+        failure(err);
+    } else {
+        success();
+    }
 }
 
 @end

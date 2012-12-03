@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 steamshift. All rights reserved.
 //
 
-#import "STMNotification.h"
+#import "STMEvent.h"
 
-@implementation STMNotification
+@implementation STMEvent
 
 @end

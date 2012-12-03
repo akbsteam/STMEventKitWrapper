@@ -7,8 +7,8 @@
 //
 
 #import "STMViewController.h"
-#import "STMLocalNotificationsWrapper.h"
-#import "STMNotification.h"
+#import "STMEventKitWrapper.h"
+#import "STMEvent.h"
 
 @interface STMViewController ()
 
@@ -19,20 +19,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    STMEventKitWrapper *wrapper = [[STMEventKitWrapper alloc] initWithName:@"My Events" identifier:@"myEvents"];
     
-    STMNotification *notification = [[STMNotification alloc] init];
+    STMEvent *event = [[STMEvent alloc] init];
     
-    notification.alertBody = @"alert body";
-    notification.alertAction = @"alert action";
-    notification.message = @"message";
-    notification.repeat = @(4);
-    notification.period = @(NSHourCalendarUnit);
-    notification.startDate = [NSDate dateWithTimeIntervalSinceNow:60];
-    notification.endDate = [NSDate dateWithTimeIntervalSinceNow:1200];
-    notification.identifier = @"myEvent";
+    event.alertBody = @"alert body";
+    event.alertAction = @"alert action";
+    event.message = @"message";
+    event.repeat = @(4);
+    event.period = @(NSHourCalendarUnit);
+    event.startDate = [NSDate dateWithTimeIntervalSinceNow:60];
+    event.endDate = [NSDate dateWithTimeIntervalSinceNow:1200];
+    event.identifier = @"myEvent";
+    event.url = [NSURL URLWithString:@"http://google.com"];
     
-    [[STMLocalNotificationsWrapper sharedInstance] eventKit:notification];
+    [wrapper eventKitCreate:event success:^{
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Event Created"
+                              message:@"Yay!?"
+                              delegate:nil
+                              cancelButtonTitle:@"Okay"
+                              otherButtonTitles:nil];
+		[alert show];
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    }];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
