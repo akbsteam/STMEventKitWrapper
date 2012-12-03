@@ -1,0 +1,4 @@
+STMLocalNotificationsWrapper
+============================
+
+Local notifications wrapper
