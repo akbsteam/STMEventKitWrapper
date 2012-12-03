@@ -1,4 +1,4 @@
-STMLocalNotificationsWrapper
+STMEventKitWrapper
 ============================
 
-Local notifications wrapper
+Simple warpper for creating events using eventkit
